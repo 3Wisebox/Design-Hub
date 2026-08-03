@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "HeicDrop — HEIC to PDF Converter"
+description = "A 100% browser-based HEIC/HEIF to PDF converter. Users drag-and-drop iPhone photos and convert them to PDF instantly — no uploads, no sign-ups, no watermarks. All processing happens client-side using heic2any and pdf-lib. Features multi-file support, page size/orientation/quality controls, FAQ section, and a privacy-first design."
+version = "1.0.0"
+id = "artifacts/heicdrop"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 18109
+
+[services.development]
+run = "pnpm --filter @workspace/heicdrop run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/heicdrop", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/heicdrop/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "18109"
+BASE_PATH = "/"
