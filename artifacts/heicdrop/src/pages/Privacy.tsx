@@ -5,7 +5,7 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { Shield } from 'lucide-react';
 
 export function Privacy() {
-  useDocumentTitle('Privacy Policy — HeicDrop');
+  useDocumentTitle('Privacy Policy — HEICraft');
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -25,17 +25,17 @@ export function Privacy() {
         <div className="prose prose-slate max-w-none bg-card border rounded-3xl p-8 md:p-12 shadow-sm">
           <h3 className="text-xl font-bold mt-0 text-[#6c5ce7]">The Short Version</h3>
           <p>
-            <strong>We do not see, upload, or store your photos.</strong> HeicDrop is a 100% client-side application. All file conversions happen directly within your web browser. 
+            <strong>We do not see, upload, or store your photos.</strong> HEICraft is a 100% client-side application. All file conversions happen directly within your web browser. 
           </p>
 
           <h3 className="text-xl font-bold mt-8">1. File Processing & Conversion</h3>
           <p>
-            When you use HeicDrop to convert HEIC/HEIF files to PDF, the files you select are loaded into your browser's local memory. The conversion scripts run locally on your device. We do not transmit your files to any external server, and we do not keep copies of your data.
+            When you use HEICraft to convert HEIC/HEIF files to PDF, the files you select are loaded into your browser's local memory. The conversion scripts run locally on your device. We do not transmit your files to any external server, and we do not keep copies of your data.
           </p>
 
           <h3 className="text-xl font-bold mt-8">2. Data Collection</h3>
           <p>
-            We do not require you to create an account, provide an email address, or submit any personally identifiable information to use HeicDrop. We collect zero personal data.
+            We do not require you to create an account, provide an email address, or submit any personally identifiable information to use HEICraft. We collect zero personal data.
           </p>
 
           <h3 className="text-xl font-bold mt-8">3. Analytics & Cookies</h3>
@@ -45,7 +45,7 @@ export function Privacy() {
 
           <h3 className="text-xl font-bold mt-8">4. Third-Party Libraries</h3>
           <p>
-            HeicDrop relies on open-source JavaScript libraries (like <code>heic2any</code> and <code>pdf-lib</code>) to perform conversions. These libraries run entirely in your browser and do not phone home or transmit data to third parties.
+            HEICraft relies on open-source JavaScript libraries (like <code>heic2any</code> and <code>pdf-lib</code>) to perform conversions. These libraries run entirely in your browser and do not phone home or transmit data to third parties.
           </p>
 
           <h3 className="text-xl font-bold mt-8">5. Changes to this Policy</h3>

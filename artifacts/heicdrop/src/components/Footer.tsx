@@ -1,23 +1,16 @@
 import React from 'react';
-import { Link } from 'wouter';
 
 export function Footer() {
   return (
-    <footer className="border-t border-border mt-auto py-8 bg-card">
-      <div className="container mx-auto px-4 max-w-4xl flex flex-col md:flex-row justify-between items-center gap-4">
-        <p className="text-sm text-muted-foreground">
-          © {new Date().getFullYear()} HeicDrop — Built for iPhone users everywhere.
-        </p>
-        <div className="flex gap-6 text-sm font-medium text-muted-foreground">
-          <Link href="/privacy" className="hover:text-primary transition-colors">
-            Privacy
-          </Link>
-          <a href="#" className="hover:text-primary transition-colors">
-            Terms
-          </a>
-          <a href="#" className="hover:text-primary transition-colors">
-            Contact
-          </a>
+    <footer className="w-full border-t border-white/5 bg-[#04070f]/60 backdrop-blur-md py-8 mt-auto">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="text-xs font-mono text-white/40 tracking-widest uppercase">
+          HEICRAFT <span className="text-[10px] opacity-60">®</span> 2026
+        </div>
+        <div className="flex gap-6 text-xs font-mono tracking-widest">
+          <a href="#" className="text-white/40 hover:text-cyan-400 transition-colors">PRIVACY</a>
+          <a href="#" className="text-white/40 hover:text-cyan-400 transition-colors">TERMS</a>
+          <a href="#" className="text-white/40 hover:text-cyan-400 transition-colors">CONTACT</a>
         </div>
       </div>
     </footer>

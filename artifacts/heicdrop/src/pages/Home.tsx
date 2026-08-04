@@ -24,7 +24,7 @@ function formatBytes(bytes: number, decimals = 2) {
 }
 
 export function Home() {
-  useDocumentTitle('HeicDrop — Convert HEIC to PDF Free & Private');
+  useDocumentTitle('HEICraft — Convert HEIC to PDF Free & Private');
   const { toast } = useToast();
   
   // --- PDF Converter State ---

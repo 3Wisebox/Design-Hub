@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Logo({ className = '' }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`}>
       <svg
         width="32"
         height="32"
@@ -12,36 +12,32 @@ export function Logo({ className = '' }: { className?: string }) {
         className="flex-shrink-0"
       >
         <defs>
-          <linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#6c5ce7" />
-            <stop offset="100%" stopColor="#e17055" />
+          <linearGradient id="hex-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#06b6d4" />
+            <stop offset="100%" stopColor="#7c3aed" />
           </linearGradient>
         </defs>
-        <path
-          d="M16 2C16 2 6 12.5 6 20C6 25.5228 10.4772 30 16 30C21.5228 30 26 25.5228 26 20C26 12.5 16 2 16 2Z"
-          fill="url(#logo-gradient)"
-          opacity="0.8"
+        {/* Hexagon outline */}
+        <polygon 
+          points="16,2 30,10 30,22 16,30 2,22 2,10" 
+          stroke="url(#hex-gradient)" 
+          strokeWidth="2" 
+          fill="none"
         />
-        <rect
-          x="12"
-          y="14"
-          width="8"
-          height="10"
-          rx="1"
-          fill="white"
-        />
+        {/* H lettermark */}
         <path
-          d="M14 17H18M14 19H18M14 21H16"
-          stroke="#6c5ce7"
-          strokeWidth="1.5"
-          strokeLinecap="round"
+          d="M10 10V22M22 10V22M10 16H22"
+          stroke="#ffffff"
+          strokeWidth="2"
+          strokeLinecap="square"
+          strokeLinejoin="miter"
         />
       </svg>
-      <span className="text-2xl tracking-tight">
-        <span className="font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">
-          Heic
+      <span className="text-xl tracking-widest font-bold">
+        <span className="text-white">HEIC</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">
+          raft
         </span>
-        <span className="font-light text-[#6c5ce7]">Drop</span>
       </span>
     </div>
   );
