@@ -3,6 +3,7 @@ import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { Home } from '@/pages/Home';
 import { Privacy } from '@/pages/Privacy';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 function Router() {
   return (
@@ -16,10 +17,12 @@ function Router() {
 
 function App() {
   return (
-    <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
-      <Router />
-      <Toaster />
-    </WouterRouter>
+    <ThemeProvider>
+      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+        <Router />
+        <Toaster />
+      </WouterRouter>
+    </ThemeProvider>
   );
 }
 
