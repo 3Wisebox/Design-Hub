@@ -245,27 +245,27 @@ export function Home() {
             Your iPhone photos stay on your device. No uploads, no sign-ups, no watermarks.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-6 text-sm font-medium text-foreground/80">
-            <span className="flex items-center gap-2"><Shield className="w-4 h-4 text-green-500" /> 100% Private</span>
-            <span className="flex items-center gap-2"><Zap className="w-4 h-4 text-yellow-500" /> Instant</span>
-            <span className="flex items-center gap-2"><Smartphone className="w-4 h-4 text-blue-500" /> iPhone Support</span>
-            <span className="flex items-center gap-2"><FileText className="w-4 h-4 text-purple-500" /> Multi-Page</span>
+          <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-3 sm:gap-6 text-sm font-medium text-foreground/80">
+            <span className="flex items-center gap-2 justify-center sm:justify-start"><Shield className="w-4 h-4 text-green-500 shrink-0" /> 100% Private</span>
+            <span className="flex items-center gap-2 justify-center sm:justify-start"><Zap className="w-4 h-4 text-yellow-500 shrink-0" /> Instant</span>
+            <span className="flex items-center gap-2 justify-center sm:justify-start"><Smartphone className="w-4 h-4 text-blue-500 shrink-0" /> iPhone Support</span>
+            <span className="flex items-center gap-2 justify-center sm:justify-start"><FileText className="w-4 h-4 text-purple-500 shrink-0" /> Multi-Page</span>
           </div>
         </div>
 
         {/* STATS BAR */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1px] bg-border rounded-2xl overflow-hidden mb-12 shadow-sm">
-          <div className="bg-card p-6 text-center">
-            <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">50K+</div>
-            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1">Conversions This Month</div>
+        <div className="grid grid-cols-3 gap-[1px] bg-border rounded-2xl overflow-hidden mb-12 shadow-sm">
+          <div className="bg-card p-3 sm:p-6 text-center">
+            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">50K+</div>
+            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Conversions This Month</div>
           </div>
-          <div className="bg-card p-6 text-center">
-            <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">100%</div>
-            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1">Privacy Guaranteed</div>
+          <div className="bg-card p-3 sm:p-6 text-center">
+            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">100%</div>
+            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Privacy Guaranteed</div>
           </div>
-          <div className="bg-card p-6 text-center">
-            <div className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">0</div>
-            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1">Watermarks. Ever.</div>
+          <div className="bg-card p-3 sm:p-6 text-center">
+            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">0</div>
+            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Watermarks. Ever.</div>
           </div>
         </div>
 
