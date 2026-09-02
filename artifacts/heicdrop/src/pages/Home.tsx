@@ -289,6 +289,13 @@ export function Home() {
 
         {/* CONVERTER APP */}
         <div id="pdf-tool" className="max-w-3xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-block py-1 px-3 rounded-full bg-[#6c5ce7]/10 dark:bg-[#6c5ce7]/20 text-[#5a4bd1] dark:text-[#a89cf7] text-xs font-bold uppercase tracking-wider mb-4">
+              PDF Converter
+            </span>
+            <h2 className="text-3xl font-bold mb-4">HEIC to PDF</h2>
+            <p className="text-muted-foreground">Convert iPhone photos to multi-page PDFs</p>
+          </div>
           
           {/* Default State: Dropzone */}
           {!result && !isConverting && files.length === 0 && (
