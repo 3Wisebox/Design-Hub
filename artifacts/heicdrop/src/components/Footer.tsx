@@ -73,17 +73,17 @@ export function Footer() {
             <h4>Learn</h4>
             <ul>
               <li>
-                <a href="#faq-section">
+                <a href="#faq-heic-format">
                   <Info aria-hidden="true" /> What is HEIC Format?
                 </a>
               </li>
               <li>
-                <a href="#faq-section">
+                <a href="#faq-heic-vs-jpg-png">
                   <FileImage aria-hidden="true" /> HEIC vs JPG vs PNG
                 </a>
               </li>
               <li>
-                <a href="#faq-section">
+                <a href="#faq-open-heic">
                   <HelpCircle aria-hidden="true" /> How to Open HEIC Files
                 </a>
               </li>

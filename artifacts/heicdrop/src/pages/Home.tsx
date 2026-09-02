@@ -682,10 +682,24 @@ export function Home() {
           </div>
           
           <Accordion type="single" collapsible className="w-full">
-            <AccordionItem value="item-1" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
-              <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">What is a HEIC file?</AccordionTrigger>
+            <AccordionItem id="faq-heic-format" value="heic-format" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+              <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">What is HEIC Format?</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">HEIC</strong> (High Efficiency Image Format) is Apple's default photo format for iPhones (iOS 11+). It offers <strong className="text-foreground">up to 50% smaller file sizes</strong> than JPG while maintaining the same quality. However, HEIC files <strong className="text-foreground">don't open on Windows, Android, or many websites</strong> — which is why converting them to PDF is so useful.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem id="faq-heic-vs-jpg-png" value="heic-vs-jpg-png" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+              <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">HEIC vs JPG vs PNG</AccordionTrigger>
+              <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
+                <strong className="text-foreground">HEIC</strong> keeps excellent image quality in a smaller file, making it ideal for iPhone storage. <strong className="text-foreground">JPG</strong> is the most widely supported option for websites, email, and everyday sharing. <strong className="text-foreground">PNG</strong> preserves images without quality loss and supports transparency, but its files are usually larger. Choose JPG for compatibility, PNG for lossless graphics, and HEIC for efficient Apple photo storage.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem id="faq-open-heic" value="open-heic" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+              <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">How to Open HEIC Files</AccordionTrigger>
+              <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
+                HEIC files open natively on iPhone, iPad, and Mac. On Windows, you may need the HEIF Image Extensions from the Microsoft Store, while support on Android varies by device and app. If a file will not open, use HEICraft to convert it to <strong className="text-foreground">JPG, PNG, or PDF</strong> in your browser without uploading the original image.
               </AccordionContent>
             </AccordionItem>
             
