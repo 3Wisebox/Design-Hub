@@ -229,6 +229,24 @@ export function Home() {
     }
   }, [imgError, toast]);
 
+  React.useEffect(() => {
+    const scrollToHash = () => {
+      const targetId = window.location.hash.slice(1);
+      if (!targetId) return;
+
+      window.requestAnimationFrame(() => {
+        document.getElementById(targetId)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    };
+
+    scrollToHash();
+    window.addEventListener('hashchange', scrollToHash);
+    return () => window.removeEventListener('hashchange', scrollToHash);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -689,14 +707,14 @@ export function Home() {
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem id="faq-heic-vs-jpg-png" value="heic-vs-jpg-png" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+            <AccordionItem id="faq-heic-vs-jpg-png" value="heic-vs-jpg-png" className="scroll-mt-24 bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">HEIC vs JPG vs PNG</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
                 <strong className="text-foreground">HEIC</strong> keeps excellent image quality in a smaller file, making it ideal for iPhone storage. <strong className="text-foreground">JPG</strong> is the most widely supported option for websites, email, and everyday sharing. <strong className="text-foreground">PNG</strong> preserves images without quality loss and supports transparency, but its files are usually larger. Choose JPG for compatibility, PNG for lossless graphics, and HEIC for efficient Apple photo storage.
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem id="faq-open-heic" value="open-heic" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+            <AccordionItem id="faq-open-heic" value="open-heic" className="scroll-mt-24 bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">How to Open HEIC Files</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
                 HEIC files open natively on iPhone, iPad, and Mac. On Windows, you may need the HEIF Image Extensions from the Microsoft Store, while support on Android varies by device and app. If a file will not open, use HEICraft to convert it to <strong className="text-foreground">JPG, PNG, or PDF</strong> in your browser without uploading the original image.
