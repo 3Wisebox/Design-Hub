@@ -270,7 +270,7 @@ export function Home() {
         </div>
 
         {/* CONVERTER APP */}
-        <div className="max-w-3xl mx-auto">
+        <div id="pdf-tool" className="max-w-3xl mx-auto">
           
           {/* Default State: Dropzone */}
           {!result && !isConverting && files.length === 0 && (
@@ -468,7 +468,7 @@ export function Home() {
         </div>
 
         {/* IMAGE CONVERTER APP */}
-        <div className="mt-24 max-w-3xl mx-auto">
+        <div id="image-tool" className="mt-24 max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <span className="inline-block py-1 px-3 rounded-full bg-teal-100 dark:bg-teal-900/30 text-teal-800 dark:text-teal-300 text-xs font-bold uppercase tracking-wider mb-4">Image Converter</span>
             <h2 className="text-3xl font-bold mb-4">HEIC to JPG / PNG</h2>
@@ -675,7 +675,7 @@ export function Home() {
         </div>
 
         {/* FAQ SECTION */}
-        <div className="mt-32 max-w-3xl mx-auto">
+        <div id="faq-section" className="mt-32 max-w-3xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
             <p className="text-muted-foreground">Everything you need to know about converting HEIC to PDF</p>

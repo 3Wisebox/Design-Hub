@@ -101,7 +101,9 @@ export function useHeicConverter() {
         await new Promise((resolve) => setTimeout(resolve, 50));
         
         const pdfBytes = await pdf.save();
-        const pdfBlob = new Blob([pdfBytes], { type: 'application/pdf' });
+        const pdfArrayBuffer = new ArrayBuffer(pdfBytes.byteLength);
+        new Uint8Array(pdfArrayBuffer).set(pdfBytes);
+        const pdfBlob = new Blob([pdfArrayBuffer], { type: 'application/pdf' });
 
         setResult({
           pdfBlob,

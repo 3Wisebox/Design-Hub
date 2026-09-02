@@ -1,0 +1,66 @@
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Column 1: Brand -->
+      <div class="footer-col">
+        <div class="footer-brand">
+          <a class="logo" href="/">HEIC<span>2PDF</span></a>
+          <p>Convert HEIC/HEIF iPhone photos to PDF, JPG, and PNG.<br>100% free, private, and browser-based.</p>
+        </div>
+        <div class="footer-badges">
+          <span class="footer-badge">🔒 100% Private</span>
+          <span class="footer-badge">⚡ Free Forever</span>
+          <span class="footer-badge">📱 iPhone Ready</span>
+        </div>
+      </div>
+
+      <!-- Column 2: Tools -->
+      <div class="footer-col">
+        <h4>Convert HEIC To</h4>
+        <ul>
+          <li><a href="#" onclick="switchTab('pdf')">📄 PDF (Multi-page)</a></li>
+          <li><a href="#" onclick="switchTab('jpg')">🖼️ JPG (Individual)</a></li>
+          <li><a href="#" onclick="switchTab('png')">📷 PNG (Individual)</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Learn -->
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#faq-section">What is HEIC Format?</a></li>
+          <li><a href="#faq-section">HEIC vs JPG vs PNG</a></li>
+          <li><a href="#faq-section">How to Open HEIC Files</a></li>
+          <li><a href="#faq-section">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Company -->
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/privacy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms of Service</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; 2026 HEIC2PDF. Made with ❤️ for iPhone users everywhere.
+      </div>
+      <div class="footer-socials">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="LinkedIn">💼</a>
+        <a href="#" aria-label="Reddit">📢</a>
+        <a href="#" aria-label="Product Hunt">🚀</a>
+      </div>
+    </div>
+  </div>
+</footer>
