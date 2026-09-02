@@ -9,7 +9,7 @@ export function Logo({ className = '' }: { className?: string }) {
         viewBox="0 0 32 32"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="flex-shrink-0"
+        className="flex-shrink-0 text-foreground"
       >
         <defs>
           <linearGradient id="hex-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -27,14 +27,14 @@ export function Logo({ className = '' }: { className?: string }) {
         {/* H lettermark */}
         <path
           d="M10 10V22M22 10V22M10 16H22"
-          stroke="#ffffff"
+          stroke="currentColor"
           strokeWidth="2"
           strokeLinecap="square"
           strokeLinejoin="miter"
         />
       </svg>
       <span className="text-xl tracking-widest font-bold">
-        <span className="text-white">HEIC</span>
+        <span className="text-foreground">HEIC</span>
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">
           raft
         </span>
