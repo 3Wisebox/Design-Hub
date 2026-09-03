@@ -104,7 +104,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:hello@heicraft.app">
+                <a href="/contact">
                   <Mail aria-hidden="true" /> Contact
                 </a>
               </li>

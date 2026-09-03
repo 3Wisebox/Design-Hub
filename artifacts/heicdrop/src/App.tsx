@@ -3,6 +3,7 @@ import NotFound from '@/pages/not-found';
 import { Route, Switch, Router as WouterRouter } from 'wouter';
 import { Home } from '@/pages/Home';
 import { Privacy } from '@/pages/Privacy';
+import { Contact } from '@/pages/Contact';
 import { ThemeProvider } from '@/context/ThemeContext';
 
 function Router() {
@@ -10,6 +11,7 @@ function Router() {
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/contact" component={Contact} />
       <Route component={NotFound} />
     </Switch>
   );

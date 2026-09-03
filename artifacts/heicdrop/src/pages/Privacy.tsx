@@ -183,7 +183,7 @@ export function Privacy() {
                     </InfoBlock>
                     <InfoBlock title="If you contact us">
                       <p>
-                        If you voluntarily email hello@heicraft.app, we receive the
+                        If you voluntarily email 3Wisebox@gmail.com, we receive the
                         address and message you send so we can read and reply. Please
                         do not attach a photo unless it is necessary to your question.
                       </p>
@@ -301,10 +301,10 @@ export function Privacy() {
                     associated with a message you sent, or need to raise a concern,
                     contact us at{' '}
                     <a
-                      href="mailto:hello@heicraft.app"
+                      href="mailto:3Wisebox@gmail.com"
                       className="font-semibold text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:decoration-primary"
                     >
-                      hello@heicraft.app
+                      3Wisebox@gmail.com
                     </a>
                     . We will use the details you provide to understand and respond to
                     your request.
@@ -358,11 +358,11 @@ export function Privacy() {
                 </p>
               </div>
               <a
-                href="mailto:hello@heicraft.app"
+                href="mailto:3Wisebox@gmail.com"
                 className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
-                Email hello@heicraft.app
+                Email 3Wisebox@gmail.com
                 <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
