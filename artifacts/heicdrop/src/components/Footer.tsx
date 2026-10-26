@@ -114,7 +114,7 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#site-footer">
+                <a href="/terms">
                   <Scale aria-hidden="true" /> Terms of Service
                 </a>
               </li>
