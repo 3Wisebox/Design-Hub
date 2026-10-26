@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Download, FileIcon, Shield, Zap, Smartphone, FileText, Image as ImageIcon, X, ImagePlus } from 'lucide-react';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
@@ -15,6 +15,13 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 
+const FAQ_VALUE_BY_HASH: Record<string, string> = {
+  'faq-heic-format': 'heic-format',
+  'faq-heic-vs-jpg-png': 'heic-vs-jpg-png',
+  'faq-open-heic': 'open-heic',
+  'faq-section': '',
+};
+
 function formatBytes(bytes: number, decimals = 2) {
   if (bytes === 0) return '0 Bytes';
   const k = 1024;
@@ -30,6 +37,30 @@ export function Home() {
     'Convert HEIC and HEIF iPhone photos to PDF, JPG, or PNG in your browser. Create multi-page PDFs or image files without uploading your photos.',
   );
   const { toast } = useToast();
+  const [openFaq, setOpenFaq] = useState(() => {
+    if (typeof window === 'undefined') return '';
+    return FAQ_VALUE_BY_HASH[window.location.hash.slice(1)] ?? '';
+  });
+
+  useEffect(() => {
+    const openFaqFromHash = () => {
+      const hash = window.location.hash.slice(1);
+      const value = FAQ_VALUE_BY_HASH[hash];
+      if (value === undefined) return;
+
+      setOpenFaq(value);
+      window.requestAnimationFrame(() => {
+        document.getElementById(hash)?.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start',
+        });
+      });
+    };
+
+    openFaqFromHash();
+    window.addEventListener('hashchange', openFaqFromHash);
+    return () => window.removeEventListener('hashchange', openFaqFromHash);
+  }, []);
   
   // --- PDF Converter State ---
   const [files, setFiles] = useState<File[]>([]);
@@ -714,14 +745,14 @@ export function Home() {
         </div>
 
         {/* FAQ SECTION */}
-        <div id="faq-section" className="mt-32 max-w-3xl mx-auto">
+        <div id="faq-section" className="mt-32 max-w-3xl mx-auto scroll-mt-24">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
             <p className="text-muted-foreground">Everything you need to know about converting HEIC to PDF</p>
           </div>
           
-          <Accordion type="single" collapsible className="w-full">
-            <AccordionItem id="faq-heic-format" value="heic-format" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+          <Accordion type="single" collapsible value={openFaq} onValueChange={setOpenFaq} className="w-full">
+            <AccordionItem id="faq-heic-format" value="heic-format" className="scroll-mt-24 bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">What is HEIC Format?</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
               <strong className="text-foreground">HEIC</strong> is an image format commonly used for photos on iPhones. It is part of the broader HEIF family and can store high-quality images efficiently. Support varies across devices, apps, and websites, so a standard output format can make sharing easier.

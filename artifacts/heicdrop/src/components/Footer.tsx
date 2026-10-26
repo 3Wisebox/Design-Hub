@@ -73,22 +73,22 @@ export function Footer() {
             <h4>Learn</h4>
             <ul>
               <li>
-                <a href="#faq-heic-format">
+                <a href="/#faq-heic-format" data-testid="link-learn-heic-format">
                   <Info aria-hidden="true" /> What is HEIC Format?
                 </a>
               </li>
               <li>
-                <a href="#faq-heic-vs-jpg-png">
+                <a href="/#faq-heic-vs-jpg-png" data-testid="link-learn-format-comparison">
                   <FileImage aria-hidden="true" /> HEIC vs JPG vs PNG
                 </a>
               </li>
               <li>
-                <a href="#faq-open-heic">
+                <a href="/#faq-open-heic" data-testid="link-learn-open-heic">
                   <HelpCircle aria-hidden="true" /> How to Open HEIC Files
                 </a>
               </li>
               <li>
-                <a href="#faq-section">
+                <a href="/#faq-section" data-testid="link-learn-faq">
                   <HelpCircle aria-hidden="true" /> FAQ
                 </a>
               </li>
