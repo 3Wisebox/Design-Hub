@@ -1,0 +1,22 @@
+{
+  "home": {
+    "path": "/",
+    "title": "HEIC to PDF, JPG & PNG Converter | HEICraft",
+    "description": "Convert HEIC and HEIF iPhone photos to PDF, JPG, or PNG in your browser. Create multi-page PDFs or image files without uploading your photos."
+  },
+  "about": {
+    "path": "/about",
+    "title": "About HEICraft — HEIC to PDF, JPG & PNG",
+    "description": "Learn how HEICraft turns HEIC and HEIF photos into useful PDF, JPG, or PNG files with browser-based processing and practical format controls."
+  },
+  "contact": {
+    "path": "/contact",
+    "title": "Contact HEICraft — Questions & Feedback",
+    "description": "Contact HEICraft about HEIC conversion, privacy, or feedback. Fill in a message to open a ready-to-send email to 3Wisebox@gmail.com."
+  },
+  "privacy": {
+    "path": "/privacy",
+    "title": "Privacy Policy — HEICraft",
+    "description": "Read how HEICraft handles files, browser storage, and email messages. HEIC and HEIF conversion runs locally in your browser."
+  }
+}

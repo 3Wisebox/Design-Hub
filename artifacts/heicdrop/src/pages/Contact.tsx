@@ -13,6 +13,7 @@ import {
   MessageCircleQuestion,
   ShieldCheck,
 } from 'lucide-react';
+import pageMetadata from '@/seo-metadata.json';
 
 const CONTACT_EMAIL = '3Wisebox@gmail.com';
 
@@ -31,10 +32,7 @@ const initialForm: ContactForm = {
 };
 
 export function Contact() {
-  useDocumentTitle(
-    'Contact HEICraft — Questions & Feedback',
-    'Contact HEICraft about HEIC conversion, privacy, or feedback. Fill in a message to open a ready-to-send email to 3Wisebox@gmail.com.',
-  );
+  useDocumentTitle(pageMetadata.contact.title, pageMetadata.contact.description);
 
   const [form, setForm] = useState<ContactForm>(initialForm);
   const [submitted, setSubmitted] = useState(false);

@@ -1,5 +1,4 @@
 import { useState, useCallback, useRef } from 'react';
-import heic2any from 'heic2any';
 import { PDFDocument } from 'pdf-lib';
 
 const PAGE_SIZES: Record<string, [number, number]> = {
@@ -35,6 +34,7 @@ export function useHeicConverter() {
       setError(null);
 
       try {
+        const { default: heic2any } = await import('heic2any');
         const pdf = await PDFDocument.create();
 
         for (let i = 0; i < files.length; i++) {

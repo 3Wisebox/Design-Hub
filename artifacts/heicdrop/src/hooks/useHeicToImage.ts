@@ -1,5 +1,4 @@
 import { useState, useCallback } from 'react';
-import heic2any from 'heic2any';
 import JSZip from 'jszip';
 
 export type ImageFormat = 'jpeg' | 'png';
@@ -32,6 +31,7 @@ export function useHeicToImage() {
     setError(null);
 
     try {
+      const { default: heic2any } = await import('heic2any');
       const ext = options.format === 'jpeg' ? 'jpg' : 'png';
       const mimeType = options.format === 'jpeg' ? 'image/jpeg' : 'image/png';
       const convertedBlobs: { name: string; blob: Blob }[] = [];

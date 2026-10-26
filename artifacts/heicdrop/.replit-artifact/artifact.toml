@@ -20,6 +20,18 @@ serve = "static"
 publicDir = "artifacts/heicdrop/dist/public"
 
 [[services.production.rewrites]]
+from = "/about"
+to = "/about/index.html"
+
+[[services.production.rewrites]]
+from = "/contact"
+to = "/contact/index.html"
+
+[[services.production.rewrites]]
+from = "/privacy"
+to = "/privacy/index.html"
+
+[[services.production.rewrites]]
 from = "/*"
 to = "/index.html"
 

@@ -7,6 +7,8 @@ import { Contact } from '@/pages/Contact';
 import { About } from '@/pages/About';
 import { Terms } from '@/pages/Terms';
 import { ThemeProvider } from '@/context/ThemeContext';
+import { useMemo } from 'react';
+import type { BaseLocationHook } from 'wouter';
 
 function Router() {
   return (
@@ -21,10 +23,19 @@ function Router() {
   );
 }
 
-function App() {
+function App({ staticPath }: { staticPath?: string } = {}) {
+  const staticLocationHook = useMemo<BaseLocationHook | undefined>(() => {
+    if (!staticPath) return undefined;
+
+    return () => [staticPath, () => {}];
+  }, [staticPath]);
+
   return (
     <ThemeProvider>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')}>
+      <WouterRouter
+        base={import.meta.env.BASE_URL.replace(/\/$/, '')}
+        hook={staticLocationHook}
+      >
         <Router />
         <Toaster />
       </WouterRouter>

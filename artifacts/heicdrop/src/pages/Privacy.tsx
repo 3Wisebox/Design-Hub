@@ -13,12 +13,10 @@ import {
   Smartphone,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
+import pageMetadata from '@/seo-metadata.json';
 
 export function Privacy() {
-  useDocumentTitle(
-    'Privacy Policy — HEICraft',
-    'Read how HEICraft handles files, browser storage, and email messages. HEIC and HEIF conversion runs locally in your browser.',
-  );
+  useDocumentTitle(pageMetadata.privacy.title, pageMetadata.privacy.description);
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -8,6 +8,7 @@ import { useHeicToImage, ImageConversionOptions } from '@/hooks/useHeicToImage';
 import { useToast } from '@/components/ui/toast/use-toast';
 import { FormatGuide } from '@/components/FormatGuide';
 import { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose } from '@/components/ui/toast/toast';
+import pageMetadata from '@/seo-metadata.json';
 import { 
   Accordion,
   AccordionContent,
@@ -32,10 +33,7 @@ function formatBytes(bytes: number, decimals = 2) {
 }
 
 export function Home() {
-  useDocumentTitle(
-    'HEIC to PDF, JPG & PNG Converter | HEICraft',
-    'Convert HEIC and HEIF iPhone photos to PDF, JPG, or PNG in your browser. Create multi-page PDFs or image files without uploading your photos.',
-  );
+  useDocumentTitle(pageMetadata.home.title, pageMetadata.home.description);
   const { toast } = useToast();
   const [openFaq, setOpenFaq] = useState(() => {
     if (typeof window === 'undefined') return '';

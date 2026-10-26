@@ -24,7 +24,12 @@ export function useDocumentTitle(title: string, description: string) {
     setMetaContent('name', 'twitter:title', title);
     setMetaContent('name', 'twitter:description', description);
 
-    const canonicalUrl = new URL(window.location.pathname, window.location.origin).toString();
+    const routePath = window.location.pathname.replace(/\/+$/, '') || '/';
+    const configuredSiteUrl = import.meta.env.VITE_SITE_URL;
+    const canonicalUrl = new URL(
+      routePath,
+      configuredSiteUrl || window.location.origin,
+    ).toString();
     setMetaContent('property', 'og:url', canonicalUrl);
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');

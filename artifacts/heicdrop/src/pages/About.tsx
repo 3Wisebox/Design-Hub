@@ -13,12 +13,10 @@ import {
   Smartphone,
   Workflow,
 } from 'lucide-react';
+import pageMetadata from '@/seo-metadata.json';
 
 export function About() {
-  useDocumentTitle(
-    'About HEICraft — HEIC to PDF, JPG & PNG',
-    'Learn how HEICraft turns HEIC and HEIF photos into useful PDF, JPG, or PNG files with browser-based processing and practical format controls.',
-  );
+  useDocumentTitle(pageMetadata.about.title, pageMetadata.about.description);
 
   return (
     <div className="flex min-h-screen flex-col">
