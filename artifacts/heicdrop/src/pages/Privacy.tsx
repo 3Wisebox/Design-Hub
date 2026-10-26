@@ -15,7 +15,10 @@ import {
 import type { ReactNode } from 'react';
 
 export function Privacy() {
-  useDocumentTitle('Privacy Policy — HEICraft');
+  useDocumentTitle(
+    'Privacy Policy — HEICraft',
+    'Read how HEICraft handles files, browser storage, and email messages. HEIC and HEIF conversion runs locally in your browser.',
+  );
 
   return (
     <div className="flex min-h-screen flex-col">

@@ -99,7 +99,7 @@ export function Footer() {
             <h4>Company</h4>
             <ul>
               <li>
-                <a href="/">
+                <a href="/about">
                   <Info aria-hidden="true" /> About HEICraft
                 </a>
               </li>

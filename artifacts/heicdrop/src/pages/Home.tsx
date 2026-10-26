@@ -6,6 +6,7 @@ import { useDocumentTitle } from '@/hooks/useDocumentTitle';
 import { useHeicConverter, ConversionOptions } from '@/hooks/useHeicConverter';
 import { useHeicToImage, ImageConversionOptions } from '@/hooks/useHeicToImage';
 import { useToast } from '@/components/ui/toast/use-toast';
+import { FormatGuide } from '@/components/FormatGuide';
 import { ToastProvider, ToastViewport, Toast, ToastTitle, ToastDescription, ToastClose } from '@/components/ui/toast/toast';
 import { 
   Accordion,
@@ -24,7 +25,10 @@ function formatBytes(bytes: number, decimals = 2) {
 }
 
 export function Home() {
-  useDocumentTitle('HEICraft — Convert HEIC to PDF Free & Private');
+  useDocumentTitle(
+    'HEIC to PDF, JPG & PNG Converter | HEICraft',
+    'Convert HEIC and HEIF iPhone photos to PDF, JPG, or PNG in your browser. Create multi-page PDFs or image files without uploading your photos.',
+  );
   const { toast } = useToast();
   
   // --- PDF Converter State ---
@@ -191,6 +195,14 @@ export function Home() {
     convertImgFiles(imgFiles, imgOptions);
   };
 
+  const chooseGuideFormat = (format: 'pdf' | 'jpg' | 'png') => {
+    if (format === 'jpg') {
+      setImgOptions((current) => ({ ...current, format: 'jpeg' }));
+    } else if (format === 'png') {
+      setImgOptions((current) => ({ ...current, format: 'png' }));
+    }
+  };
+
   const handleImgDownload = () => {
     if (!imgResult) return;
     const url = URL.createObjectURL(imgResult.blob);
@@ -256,7 +268,7 @@ export function Home() {
         {/* HERO */}
         <div className="text-center mb-10">
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 text-foreground">
-            Convert <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">HEIC</span> to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">PDF</span>
+            Convert <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">HEIC</span> to <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">PDF, JPG, or PNG</span>
             <br className="hidden sm:block" /> Instantly & Privately
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
@@ -264,8 +276,8 @@ export function Home() {
           </p>
           
           <div className="grid grid-cols-2 sm:flex sm:flex-wrap sm:justify-center gap-3 sm:gap-6 text-sm font-medium text-foreground/80">
-            <span className="flex items-center gap-2 justify-center sm:justify-start"><Shield className="w-4 h-4 text-green-500 shrink-0" /> 100% Private</span>
-            <span className="flex items-center gap-2 justify-center sm:justify-start"><Zap className="w-4 h-4 text-yellow-500 shrink-0" /> Instant</span>
+            <span className="flex items-center gap-2 justify-center sm:justify-start"><Shield className="w-4 h-4 text-green-500 shrink-0" /> Files processed in your browser</span>
+            <span className="flex items-center gap-2 justify-center sm:justify-start"><Zap className="w-4 h-4 text-yellow-500 shrink-0" /> No conversion upload</span>
             <span className="flex items-center gap-2 justify-center sm:justify-start"><Smartphone className="w-4 h-4 text-blue-500 shrink-0" /> iPhone Support</span>
             <span className="flex items-center gap-2 justify-center sm:justify-start"><FileText className="w-4 h-4 text-purple-500 shrink-0" /> Multi-Page</span>
           </div>
@@ -274,18 +286,20 @@ export function Home() {
         {/* STATS BAR */}
         <div className="grid grid-cols-3 gap-[1px] bg-border rounded-2xl overflow-hidden mb-12 shadow-sm">
           <div className="bg-card p-3 sm:p-6 text-center">
-            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">50K+</div>
-            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Conversions This Month</div>
+            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">3</div>
+            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Output Formats</div>
           </div>
           <div className="bg-card p-3 sm:p-6 text-center">
-            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">100%</div>
-            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Privacy Guaranteed</div>
+            <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">Local</div>
+            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Browser Processing</div>
           </div>
           <div className="bg-card p-3 sm:p-6 text-center">
             <div className="text-xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#6c5ce7] to-[#e17055]">0</div>
-            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Watermarks. Ever.</div>
+            <div className="text-[10px] sm:text-xs font-semibold text-muted-foreground uppercase tracking-wider mt-1 leading-tight">Watermarks Added</div>
           </div>
         </div>
+
+        <FormatGuide onChooseFormat={chooseGuideFormat} />
 
         {/* CONVERTER APP */}
         <div id="pdf-tool" className="max-w-3xl mx-auto">
@@ -710,7 +724,7 @@ export function Home() {
             <AccordionItem id="faq-heic-format" value="heic-format" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">What is HEIC Format?</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">HEIC</strong> (High Efficiency Image Format) is Apple's default photo format for iPhones (iOS 11+). It offers <strong className="text-foreground">up to 50% smaller file sizes</strong> than JPG while maintaining the same quality. However, HEIC files <strong className="text-foreground">don't open on Windows, Android, or many websites</strong> — which is why converting them to PDF is so useful.
+              <strong className="text-foreground">HEIC</strong> is an image format commonly used for photos on iPhones. It is part of the broader HEIF family and can store high-quality images efficiently. Support varies across devices, apps, and websites, so a standard output format can make sharing easier.
               </AccordionContent>
             </AccordionItem>
 
@@ -731,7 +745,14 @@ export function Home() {
             <AccordionItem value="item-2" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">Is my data safe? Do you store my images?</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">100% safe.</strong> Your HEIC files <strong className="text-foreground">never leave your device</strong>. All conversion happens directly in your browser using JavaScript. We don't upload, store, or see any of your images. <strong className="text-foreground">Privacy is our #1 priority.</strong>
+                HEICraft processes selected HEIC and HEIF files in your browser. The converter does not upload the selected images to a HEICraft conversion server. Your browser and device remain responsible for local file handling and temporary memory.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-format-choice" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
+              <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">Which format should I choose?</AccordionTrigger>
+              <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
+                Choose <strong className="text-foreground">PDF</strong> to combine photos into one multi-page document. Choose <strong className="text-foreground">JPG</strong> for a widely used image format with adjustable quality. Choose <strong className="text-foreground">PNG</strong> when you want an image output without a quality slider. The best choice depends on where you plan to use the file.
               </AccordionContent>
             </AccordionItem>
             
@@ -745,7 +766,7 @@ export function Home() {
             <AccordionItem value="item-4" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">What are the file size limits?</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
-                Since all processing happens locally, the limit depends on your <strong className="text-foreground">device's memory</strong>. Most modern browsers can handle <strong className="text-foreground">100+ HEIC files</strong> at once. For very large batches (200+ images), consider splitting into smaller groups.
+                There is no fixed file-count limit set by the converter. The practical limit depends on your device memory, browser, file sizes, and available resources. If a large batch is slow or fails, try converting fewer files at a time.
               </AccordionContent>
             </AccordionItem>
 
@@ -759,7 +780,7 @@ export function Home() {
             <AccordionItem value="item-6" className="bg-card border rounded-2xl mb-4 px-2 overflow-hidden shadow-sm data-[state=open]:border-[#6c5ce7]/30 transition-colors">
               <AccordionTrigger className="hover:no-underline px-4 py-4 text-left font-semibold">Is this tool really free? Any hidden costs?</AccordionTrigger>
               <AccordionContent className="px-4 pb-4 text-muted-foreground leading-relaxed">
-                <strong className="text-foreground">100% free. Forever.</strong> No watermarks, no limits, no sign-ups, no credit cards. Just a simple tool that works. If you find this useful, share it with a friend — that's the only "cost"!
+                HEICraft currently offers PDF, JPG, and PNG conversion without an account or payment flow, and converted files do not have a HEICraft watermark. Your internet or device costs, if any, are separate.
               </AccordionContent>
             </AccordionItem>
           </Accordion>

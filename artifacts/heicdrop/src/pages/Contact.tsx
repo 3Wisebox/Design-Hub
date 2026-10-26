@@ -31,7 +31,10 @@ const initialForm: ContactForm = {
 };
 
 export function Contact() {
-  useDocumentTitle('Contact — HEICraft');
+  useDocumentTitle(
+    'Contact HEICraft — Questions & Feedback',
+    'Contact HEICraft about HEIC conversion, privacy, or feedback. Fill in a message to open a ready-to-send email to 3Wisebox@gmail.com.',
+  );
 
   const [form, setForm] = useState<ContactForm>(initialForm);
   const [submitted, setSubmitted] = useState(false);
